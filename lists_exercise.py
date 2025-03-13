@@ -40,7 +40,7 @@ print(is_space_free(tic_tac, (2, 1))) # True
 # Return True if there are empty spaces
 #  Otherwise return false.
 
-
+# This surely is not the best way to do this....?
 def has_free_spaces(board):
     for row in board:
         for space in row:
@@ -71,12 +71,21 @@ tic_tac = ("- X O\n" +
            "X - X\n" +
            "O - O\n"   )
 
-# scroll down for clues:
-
-print(tic_tac)
 
 tic_tac_split = tic_tac.split('\n')
+tic_tac_split.pop() # Without this, there was somehow an empty space in it's own array: [['-', 'X', 'O'], ['X', '-', 'X'], ['O', '-', 'O'], [""]]
+tic_tac_board = []
+
+for string in tic_tac_split:
+    tic_tac_board.append(string.split(' '))
+
 print(tic_tac_split)
+print(tic_tac_board)
+
+# scroll down for clues:
+
+
+
 
 
 
